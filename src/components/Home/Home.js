@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useUsers from '../../Hook/useUsers';
 import SingleUser from '../SingleUser/SingleUser';
 
@@ -19,6 +20,7 @@ const Home = () => {
                     ></SingleUser>)
                 }
             </div>
+            <Link to="/users">Load more .......</Link>
         </div>
     );
 };
