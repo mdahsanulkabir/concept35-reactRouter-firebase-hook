@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import UserInfo from './components/UserInfo/UserInfo';
 import Users from './components/Users/Users';
+import RequireAuth from './RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="users" element={<Users />} />
-        <Route path="user/:userId" element={<UserInfo />} />
+        <Route path="user/:userId" element={
+        <RequireAuth>
+          <UserInfo />
+        </RequireAuth>} />
         <Route path="login" element={<Login />} />
       </Routes>
     </div>
